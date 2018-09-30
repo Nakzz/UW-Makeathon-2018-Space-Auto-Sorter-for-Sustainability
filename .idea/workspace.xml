@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6b542867-77e1-47cf-a070-67fa5104b80d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasetBuilding/bingImageParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasetBuilding/bingImageParser.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +25,7 @@
       <file leaf-file-name="bingImageParser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/datasetBuilding/bingImageParser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
+            <state relative-caret-position="44">
               <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
               <folding>
                 <element signature="e#406#437#0" expanded="true" />
@@ -59,10 +58,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1909" />
-    <option name="width" value="1943" />
-    <option name="height" value="2102" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="647" />
+    <option name="width" value="1073" />
+    <option name="height" value="1204" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -171,17 +170,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1091" y="0" width="1110" height="1201" extended-state="0" />
-    <editor active="true" />
+    <frame x="370" y="0" width="613" height="688" extended-state="1" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24115457" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.4488735" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" weight="0.3286648" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39215687" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32492998" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.6236559" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -271,7 +269,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/datasetBuilding/bingImageParser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
+        <state relative-caret-position="44">
           <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
           <folding>
             <element signature="e#406#437#0" expanded="true" />
