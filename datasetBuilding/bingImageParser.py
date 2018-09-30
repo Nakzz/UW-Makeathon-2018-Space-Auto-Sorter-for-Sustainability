@@ -1,6 +1,6 @@
 # USAGE
-# python search_bing_api.py --query "coke can" --output dataset/metal
-# python search_bing_api.py --query "plastic water bottle" --output dataset/plastic
+# python bingImageParser.py --query "coke can" --output dataset/metal
+# python bingImageParser.py --query "plastic water bottle" --output dataset/plastic
 
 
 # import the necessary packages
@@ -21,7 +21,7 @@ args = vars(ap.parse_args())
 # api and constrains
 API_KEY = "f140cf3df8d843a5836707af018fd1bf"
 MAX_RESULTS = 200
-GROUP_SIZE = 50
+GROUP_SIZE = 80
 URL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
 
 # error handling
@@ -32,6 +32,7 @@ EXCEPTIONS = set([IOError, FileNotFoundError, exceptions.RequestException, excep
 searchTerm = args["query"]
 headers = {"Ocp-Apim-Subscription-Key" : API_KEY}
 params = {"q": searchTerm, "offset": 0, "count": GROUP_SIZE}
+path = args["output"] + searchTerm
 
 # make the search
 print("[INFO] searching Bing API for '{}'".format(searchTerm))
@@ -71,13 +72,27 @@ for offset in range(0, estNumResults, GROUP_SIZE):
 
 			# build the path to the output image
 			ext = v["contentUrl"][v["contentUrl"].rfind("."):]
-			p = os.path.sep.join([args["output"], "{}{}".format(
+			p = os.path.sep.join([path, "{}{}".format(
 				str(total).zfill(8), ext)])
+			print(p)
+
+			# check if file exists
+			exists = os.path.isfile(p)
+			if exists:
+			# Store configuration file values
+				p = os.path.sep.join([args["output"] , "{}{}".format(
+				str(total+"_1").zfill(8), ext)])
+				f = open(p, "wb")
+				f.write(r.content)
+				f.close()
+			else:
+				f = open(p, "wb")
+				f.write(r.content)
+				f.close()
+			# Keep presets
 
 			# write the image to disk
-			f = open(p, "wb")
-			f.write(r.content)
-			f.close()
+
 
 		# catch any errors that would not unable us to download the
 		# image
@@ -95,8 +110,13 @@ for offset in range(0, estNumResults, GROUP_SIZE):
 		# image from disk (so it should be ignored)
 		if image is None:
 			print("[INFO] deleting: {}".format(p))
-			os.remove(p)
-			continue
+
+			# more error handling stuff
+			try:
+				os.remove(p)
+			except Exception as e:
+				print("Havin issue removing this file: {}. Might not exists. ".format(p))
+				continue
 
 		# update the counter
 		total += 1
